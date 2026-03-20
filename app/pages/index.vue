@@ -1,14 +1,7 @@
 <script setup lang="ts">
-import { onMounted } from "vue"
-
-onMounted(() => {
-    navigateTo("/apps/dashboard", { replace: true })
-})
-
+  await navigateTo('/apps/dashboard')
 </script>
 
 <template>
-    <div class="p-4 text-center text-gray-500">
-        Redirecting...
-    </div>
+  <div>Redirecting to dashboard...</div>
 </template>
