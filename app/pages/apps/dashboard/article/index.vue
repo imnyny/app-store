@@ -5,7 +5,7 @@ definePageMeta({
 </script>
 
 <template>
-    <h2>
-        Hello from index.vue file
-    </h2>
+    <NuxtLink to="/apps/dashboard/article/create">
+        Appstore MS
+    </NuxtLink>
 </template>
