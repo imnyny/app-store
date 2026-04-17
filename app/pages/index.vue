@@ -1,5 +1,7 @@
+<script setup lang="ts">
+  await navigateTo('/apps/dashboard')
+</script>
+
 <template>
-    <div>
-        <h1>Hello form index.vue file</h1>
-    </div>
+  <div>Redirecting to dashboard...</div>
 </template>

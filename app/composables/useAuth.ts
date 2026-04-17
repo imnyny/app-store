@@ -33,17 +33,19 @@ export const useAuth = () => {
 
 
     const login = async (credentials: LoginREQ) => {
-        try {
-            loading.value = true
-            const res = await $fetch<LoginRES>("/api/v-portfolio/admin-auth/login", {
-                method: "POST",
-                body: credentials,
-            })
+    try {
+        loading.value = true
+        const res = await $fetch<LoginRES>("/api/v-portfolio/admin-auth/login", {
+            method: "POST",
+            body: credentials,
+        })
+        token.value = res.token
 
-            token.value = res.token
-            await fetchUser()
+        await fetchUser({
+            Authorization: `Bearer ${res.token}`
+        })
 
-            await navigateTo("/dashboard", { replace: true })
+        await navigateTo("/apps/dashboard", { replace: true })
         } catch (err: any) {
             throw err
         } finally {
@@ -88,6 +90,7 @@ export const useAuth = () => {
 
 
     return {
+        fetchUser,
         loading,
         login,
         logout,

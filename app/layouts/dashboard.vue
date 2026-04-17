@@ -1,4 +1,9 @@
 <script setup lang="ts">
+import { onMounted } from "vue"
+onMounted(() => {
+  navigateTo("/apps/login", { replace : true})
+
+}) 
 </script>
 
 <template>
@@ -13,7 +18,7 @@
         <span class="text-sm text-gray-400">"Admin"</span>
         
         <NuxtLink 
-          to="/apps/dashboard/login" 
+          to="/apps/login" 
           class="bg-green-500/20 hover:bg-green-500/40 px-3 py-1 rounded-md text-sm text-gray-400 transition-colors border border-green-500/30 shadow-sm shadow-red-900/20"
         >
           Logout
